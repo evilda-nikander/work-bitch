@@ -178,3 +178,47 @@ body {
 
 /* Accessibility helper */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* Mobile: stack content vertically so image + controls fit one screen */
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .car-figure,
+  .status {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .car-figure img {
+    width: 86%;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* optional: limit height on very small viewports
+       uncomment if the image is still too tall:
+    max-height: 50vh;
+    object-fit: contain;
+    */
+  }
+
+  .status {
+    align-items: center;
+    padding: 6px 0;
+  }
+
+  .add-form { width: 100%; }
+  .buttons { justify-content: center; }
+  .progress-wrap { margin-top: 8px; }
+
+  /* Small tweaks so header and toasts don't overlap the stacked layout */
+  .brand h1 { font-size: 20px; }
+  .app { padding: 12px; }
+  .toast { left: 50%; transform: translateX(-50%); right: auto; top: 12px; }
+}
