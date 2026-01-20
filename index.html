@@ -3,19 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>G-Class Savings Tracker</title>
+  <title>Work Bitch</title>
+
+  <!-- PWA / icons -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0ea5a4" />
+
+  <!-- Standard favicons (placeholders in images/icons/) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="images/icons/favicon-32.png">
+
+  <!-- Apple / iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Work Bitch">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+
+  <!-- Windows / pinned site (optional) -->
+  <meta name="msapplication-TileColor" content="#0ea5a4">
+  <meta name="msapplication-TileImage" content="images/icons/mstile-150.png">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="app">
     <header class="brand">
-      <h1>G‑Class Goal</h1>
+      <h1>Work Bitch</h1>
       <p class="subtitle">Target: <strong id="targetAmount">185 380&nbsp;€</strong></p>
     </header>
 
     <main class="content">
-      <figure class="car-figure">
-        <!-- Local image file: images/gclass.png -->
+      <figure class="car-figure" aria-hidden="true">
+        <!-- Local image file: images/gclass.png (optional) -->
         <img id="carImage" src="images/gclass.png" alt="Mercedes G-Class" />
       </figure>
 
@@ -50,6 +70,9 @@
       <small>Local only — progress saved to your browser. Replace the image at images/gclass.png to customize.</small>
     </footer>
   </div>
+
+  <!-- Confetti canvas (used by app.js) -->
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
 
   <script src="app.js" defer></script>
 </body>
