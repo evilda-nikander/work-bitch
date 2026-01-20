@@ -25,7 +25,7 @@
   // Utilities
   function fmtEuro(n) {
     try {
-      // Use default locale for grouping/decimal; append a non-breaking space + euro sign
+      // Use the runtime locale for grouping and decimals, append non-breaking space + euro sign
       return new Intl.NumberFormat(undefined, {
         minimumFractionDigits: 0,
         maximumFractionDigits: 2,
@@ -72,7 +72,7 @@
     progressBar.style.width = `${pct}%`;
 
     // Do not show the milestones list on screen.
-    // Keep the element present in the DOM (so older markup and a11y hooks don't break),
+    // Keep the element present in the DOM for compatibility and a11y,
     // but clear its content so nothing is visible.
     if (milestonesList) {
       milestonesList.innerHTML = '';
