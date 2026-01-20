@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>G-Class Savings Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="brand">
+      <h1>G‑Class Goal</h1>
+      <p class="subtitle">Target: <strong id="targetAmount">185 380&nbsp;€</strong></p>
+    </header>
+
+    <main class="content">
+      <figure class="car-figure">
+        <!-- Local image file: images/gclass.png -->
+        <img id="carImage" src="images/gclass.png" alt="Mercedes G-Class" />
+      </figure>
+
+      <section class="status">
+        <div class="remaining">
+          <div class="label">Remaining</div>
+          <div id="remainingAmount" class="amount">185 380&nbsp;€</div>
+          <div id="percentFunded" class="percent">0%</div>
+        </div>
+
+        <div class="progress-wrap" aria-hidden="true">
+          <div id="progressBar" class="progress"></div>
+        </div>
+
+        <form id="addForm" class="add-form" onsubmit="return false;">
+          <label for="addInput" class="sr-only">Add earnings in euros</label>
+          <input id="addInput" type="number" min="0" step="0.01" placeholder="Enter amount (€)" />
+          <div class="buttons">
+            <button id="addBtn" type="button" class="btn primary">Add</button>
+            <button id="undoBtn" type="button" class="btn">Undo last</button>
+            <button id="resetBtn" type="button" class="btn danger">Reset</button>
+          </div>
+        </form>
+
+        <ul id="milestones" class="milestones" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="foot">
+      <small>Local only — progress saved to your browser. Replace the image at images/gclass.png to customize.</small>
+    </footer>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

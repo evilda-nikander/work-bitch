@@ -1,0 +1,183 @@
+:root{
+  --bg:#f3f4f6;
+  --glass: rgba(255,255,255,0.06);
+  --muted: #9aa0a6;
+  --accent: #1f2937;
+  --primary: #0ea5a4;
+  --danger: #ef4444;
+  --glass-border: rgba(255,255,255,0.08);
+  --glass-glow: rgba(255,255,255,0.03);
+  --max-width: 980px;
+  --radius: 14px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(15,23,42,0.06), transparent),
+    linear-gradient(180deg,#f7fafc, #eef2f6);
+  color:var(--accent);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.app{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+.brand{
+  text-align:center;
+  margin-bottom:10px;
+}
+.brand h1{
+  margin:0;
+  font-size:20px;
+  letter-spacing:0.6px;
+  color:#111827;
+}
+.subtitle{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+.content{
+  width:100%;
+  max-width:var(--max-width);
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.45));
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 6px 30px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(8px) saturate(120%);
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.car-figure{
+  flex:1 1 380px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.car-figure img{
+  width:100%;
+  max-width:420px;
+  border-radius:10px;
+  object-fit:cover;
+  filter: contrast(1.02) saturate(1.02);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.12);
+  border:1px solid rgba(255,255,255,0.6);
+}
+
+.status{
+  flex:1 1 360px;
+  min-width:260px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:8px 6px;
+}
+
+.remaining .label{color:var(--muted);font-size:13px}
+.amount{
+  font-size:34px;
+  font-weight:700;
+  margin-top:4px;
+}
+.percent{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:4px;
+}
+
+.progress-wrap{
+  width:100%;
+  height:12px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:6px;
+}
+.progress{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, #06b6d4, #06b6d4aa);
+  transition: width 700ms cubic-bezier(.2,.9,.2,1);
+  box-shadow: 0 6px 18px rgba(6,182,212,0.12);
+}
+
+.add-form{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:6px;
+  flex-wrap:wrap;
+}
+.add-form input{
+  flex:1 1 160px;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(2,6,23,0.06);
+  background:rgba(255,255,255,0.85);
+  font-size:15px;
+}
+.buttons{display:flex;gap:8px;flex-wrap:wrap}
+.btn{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(2,6,23,0.06);
+  background:rgba(255,255,255,0.9);
+  cursor:pointer;
+}
+.btn.primary{
+  background:linear-gradient(180deg,#06b6d4,#0ea5a4);
+  color:white;
+  border:none;
+}
+.btn.danger{
+  background:linear-gradient(180deg,#fda4af,#ef4444);
+  color:white;
+  border:none;
+}
+
+.milestones{
+  list-style:none;
+  padding:0;
+  margin:8px 0 0 0;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.milestones li{
+  background:rgba(2,6,23,0.04);
+  padding:8px 10px;
+  border-radius:8px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.toast{
+  position:fixed;
+  right:20px;
+  top:20px;
+  min-width:220px;
+  padding:12px 14px;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+  box-shadow:0 6px 26px rgba(2,6,23,0.12);
+  display:none;
+  font-weight:600;
+  color:#064e4e;
+  border:1px solid rgba(2,6,23,0.06);
+}
+
+.foot{margin-top:12px;color:var(--muted);font-size:12px;text-align:center}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
