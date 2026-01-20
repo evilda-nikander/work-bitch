@@ -25,11 +25,13 @@
   // Utilities
   function fmtEuro(n) {
     try {
+      // Use default locale for grouping/decimal; append a non-breaking space + euro sign
       return new Intl.NumberFormat(undefined, {
         minimumFractionDigits: 0,
         maximumFractionDigits: 2,
-      }).format(n) + '\u00A0��';
+      }).format(n) + '\u00A0\u20AC';
     } catch (e) {
+      // fallback
       return n.toFixed(2) + ' €';
     }
   }
@@ -69,12 +71,11 @@
     percentEl.textContent = `${pct}%`;
     progressBar.style.width = `${pct}%`;
 
-    // milestones list
-    milestonesList.innerHTML = '';
-    for (const m of MILESTONES) {
-      const li = document.createElement('li');
-      li.textContent = `${m}% — ${fmtEuro(Math.max(0, TARGET * (1 - m / 100)))}`;
-      milestonesList.appendChild(li);
+    // Do not show the milestones list on screen.
+    // Keep the element present in the DOM (so older markup and a11y hooks don't break),
+    // but clear its content so nothing is visible.
+    if (milestonesList) {
+      milestonesList.innerHTML = '';
     }
 
     // undo availability
